@@ -1,70 +1,60 @@
 # 🛒 R.E.G.O.V.A. — Reposición Eficiente de Góndolas mediante Operación con Visión Artificial
 
-> Sistema de visión computacional desacoplado para la detección automatizada, localización y análisis de productos en góndolas, orientado a mejorar la reposición de inventario en tiendas Walmart.
+\*\*Sistema de visión computacional desacoplado para la detección automatizada, localización y estimación cuantitativa de espacios vacíos en góndolas de supermercados.\*\* 
+---
 
-## Descripción del proyecto
+## 📌 1\. Descripción de la Solución 
 
-R.E.G.O.V.A. es un proyecto de visión artificial enfocado en la automatización de la supervisión de góndolas en retail. El sistema busca detectar productos, identificar faltantes o anomalías en la exhibición, y apoyar la reposición eficiente de inventario mediante análisis visual.
+### 🎯 Problemática Abordada En la industria del retail y supermercados (como Walmart Chile), los quiebres de stock en góndola representan pérdidas de ventas y degradan la experiencia del cliente. La inspección manual visual realizada por el personal es ineficiente y propensa a errores. Además, las imágenes capturadas por cámaras de seguridad en salas de venta presentan \*\*condiciones ópticas hostiles\*\*: ángulos oblicuos, distorsión por lentes \*fisheye\*, variaciones de iluminación artificial, reflejos metálicos y oclusiones temporales por clientes o carros de compra.
 
-El objetivo principal es reducir errores operativos, mejorar la disponibilidad de productos y optimizar la gestión de inventario en ambientes comerciales de gran escala.
+# 🚀 Objetivos del Proyecto 
 
-## Objetivo general
+\*\*Objetivo General:\*\* Diseñar e implementar un sistema de visión computacional que determine de manera automatizada cuánto espacio libre existe en las góndolas de supermercado, expresándose mediante una estimación porcentual segmentada por nivel físico de estantería. 
 
-Desarrollar un sistema de visión computacional capaz de detectar y localizar productos en góndolas para apoyar la reposición automatizada y la toma de decisiones en tiendas Walmart.
+\* \*\*Aporte de Valor:\*\* Superar la clasificación binaria de "vacío / no vacío", entregando una estimación cuantitativa del espacio disponible y activando alertas de reposición cuando la disponibilidad caiga al umbral crítico (\\\\(\\le 30\\%\\\\)).
 
-## Objetivos específicos
+### ⚙️ Funcionalidades Principales 
 
-- Detectar productos y elementos presentes en una góndola.
-- Localizar la posición de cada producto dentro del rack o estantería.
-- Identificar faltantes, desalineaciones o anomalías en la exhibición.
-- Generar información útil para la reposición oportuna del inventario.
-- Validar la solución mediante evidencia técnica y documentación del proyecto.
+1\. \*\*Mapa Digital Configurable (CU01 / RF01):\*\* Registro de la estructura física mediante la jerarquía \*\*Góndola --> Estante --> Región de exhibición\*\*. 2\. \*\*Pre-procesamiento Geométrica:\*\* Corrección de perspectiva (homografía) y filtro \*fisheye\* antes del análisis. 
+3\. \*\*Análisis e Inferencia de IA (CU03 / RF03-RF04):\*\* Detección de espacios vacíos y cálculo de disponibilidad porcentual observable. 
+4\. \*\*Post-procesamiento y Alertas (CU05-CU06 / RF05-RF08):\*\* Clasificación en estados (\*Normal\*, \*Atención\*, \*Crítico\*, \*Revisión requerida\*) y gestión del ciclo de vida de alertas (\*Pendiente\* \\\\(\\rightarrow\\\\) \*Atendida\*).
+5\. \*\*Supervisión de Oclusiones (CU08 / RF10):\*\* Módulo para que el supervisor valide o descarte capturas bloqueadas por objetos externos.
+---
 
-## Alcance
+## 🛠️ 2\. Estrategia y Justificación Técnica ### 
 
-- Procesamiento visual de estanterías y productos.
-- Detección automatizada de elementos en góndolas.
-- Análisis de presencia, ausencia y ubicación.
-- Soporte a la operación de reposición en retail.
-- Documentación y evidencias del desarrollo del proyecto.
+🧰 Stack Tecnológico Utilizado 
+\* \*\*Lenguaje Principal:\*\* Python 3.10+ (Scripts \`.py\` modularizados). 
+\* \*\*Visión Computacional Pre-procesamiento:\*\* OpenCV, NumPy, Pillow.
+\* \*\*Framework de Deep Learning:\*\* PyTorch, Ultralytics YOLOv8 (Variante Nano \`yolov8n\`). 
+\* \*\*Backend REST API:\*\* Python + Flask, Flask-SQLAlchemy, Psycopg2\. 
+\* \*\*Base de Datos Relacional:\*\* PostgreSQL 15+ / pgAdmin 4\. 
+\* \*\*Frontend Web:\*\* React.js.
+\* \*\*Entorno de Entrenamiento:\*\* Google Colab (GPU T4) / Kaggle GPUs.
 
-## Estructura del repositorio
+### 💡 Justificación Técnica de las Decisiones
+\* \*\*¿Por qué YOLOv8 Nano (\`yolov8n\`)?:\*\* Ofrece el mejor equilibrio entre velocidad y precisión en entornos edge/retail. Garantiza mantener el consumo de VRAM en entrenamiento \\\\(\\le 4.0\\text{ GB}\\\\) (y \\\\(\\le 2.0\\text{ GB}\\\\) en inferencia) con una latencia entre 2 y 5 segundos por imagen. 
+\* \*\*¿Por qué Arquitectura Desacoplada en Scripts \`.py\`?:\*\* Se prohíbe el uso de Jupyter Notebooks en producción para evitar problemas de variables globales, garantizar la reproducibilidad autónoma del código y facilitar la integración continua en GitHub. 
+\* \*\*¿Por qué Desacoplamiento de Reglas de Negocio?:\*\* Los umbrales de clasificación operacionales (como el umbral crítico del 30%) se gestionan en la base de datos PostgreSQL (\`criterios\_clasificacion\`), permitiendo a la administración cambiar las reglas de negocio sin necesidad de reentrenar la red neuronal. 
+---
 
-```text
-Capstone/
-├── README.md
-├── Fase 1/
-│   ├── Evidencias grupales/
-│   └── Evidencias individuales/
-└── ...
-```
+## 🏗️ 3\. Arquitectura de la Solución La arquitectura de R.E.G.O.V.A. 
 
-## Fase 1
+está dividida en tres componentes principales de procesamiento, un módulo de persistencia y una interfaz de usuario: 
 
-La carpeta `Fase 1` contiene las primeras evidencias del proyecto, incluyendo documentación, entregas grupales y evidencias individuales relacionadas con la investigación, análisis y desarrollo inicial del sistema.
 
-## Enfoque técnico
+[ Frontend Web (React) ] 
+           │ 
+           ▼
 
-El proyecto se centra en tecnologías vinculadas a:
+[ Backend API REST (Python + Flask) ] ◄────────► [ Base de Datos (PostgreSQL) ] 
+                      │                                │
 
-- Visión computacional
-- Procesamiento de imágenes
-- Detección de objetos
-- Localización visual de productos
-- Análisis de exhibición comercial
+                    (Estructura y Alertas) 
+          ▼                                          ▼ 
+[ Pre-procesamiento ]           [ Visión Computacional ] 
+ (OpenCV Homografía)          (YOLOv8n / PyTorch) │ │ 
 
-## Misión
-
-Apoyar a Walmart en la automatización de la operación de reposición de góndolas mediante un sistema inteligente de visión artificial que incremente la eficiencia operativa y la calidad de la gestión de inventario.
-
-## Repositorio
-
-Este repositorio almacena todo lo documentado y desarrollado para el proyecto de título orientado al cliente Walmart.
-
-## Estado
-
-Proyecto en desarrollo y documentación continua.
-
-## Nota
-
-Este repositorio está pensado como una base documental y técnica para el proyecto de título, consolidando evidencias, análisis y entregas asociadas al desarrollo del sistema.
+            └──────────┬──────────┘ 
+                       ▼ 
+[ Post-procesamiento y Alertas ] (Umbral Macro <= 30% / Oclusiones)
