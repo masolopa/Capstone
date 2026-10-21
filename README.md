@@ -9,13 +9,13 @@
 
 # 🚀 Objetivos del Proyecto 
 
-\*\*Objetivo General:\*\* Diseñar e implementar un sistema de visión computacional que determine de manera automatizada cuánto espacio libre existe en las góndolas de supermercado, expresándose mediante una estimación porcentual segmentada por nivel físico de estantería. 
+*Objetivo General:* Diseñar e implementar un sistema de visión computacional que determine de manera automatizada cuánto espacio libre existe en las góndolas de supermercado, expresándose mediante una estimación porcentual segmentada por nivel físico de estantería. 
 
-\* \*\*Aporte de Valor:\*\* Superar la clasificación binaria de "vacío / no vacío", entregando una estimación cuantitativa del espacio disponible y activando alertas de reposición cuando la disponibilidad caiga al umbral crítico (\\\\(\\le 30\\%\\\\)).
+*Aporte de Valor:* Superar la clasificación binaria de "vacío / no vacío", entregando una estimación cuantitativa del espacio disponible y activando alertas de reposición cuando la disponibilidad caiga al umbral crítico
 
 ### ⚙️ Funcionalidades Principales 
 
-1\. \*\*Mapa Digital Configurable (CU01 / RF01):\*\* Registro de la estructura física mediante la jerarquía \*\*Góndola --> Estante --> Región de exhibición\*\*. 2\. \*\*Pre-procesamiento Geométrica:\*\* Corrección de perspectiva (homografía) y filtro \*fisheye\* antes del análisis. 
+1 \*\*Mapa Digital Configurable (CU01 / RF01):\*\* Registro de la estructura física mediante la jerarquía \*\*Góndola --> Estante --> Región de exhibición\*\*. 2\. \*\*Pre-procesamiento Geométrica:\*\* Corrección de perspectiva (homografía) y filtro \*fisheye\* antes del análisis. 
 3\. \*\*Análisis e Inferencia de IA (CU03 / RF03-RF04):\*\* Detección de espacios vacíos y cálculo de disponibilidad porcentual observable. 
 4\. \*\*Post-procesamiento y Alertas (CU05-CU06 / RF05-RF08):\*\* Clasificación en estados (\*Normal\*, \*Atención\*, \*Crítico\*, \*Revisión requerida\*) y gestión del ciclo de vida de alertas (\*Pendiente\* \\\\(\\rightarrow\\\\) \*Atendida\*).
 5\. \*\*Supervisión de Oclusiones (CU08 / RF10):\*\* Módulo para que el supervisor valide o descarte capturas bloqueadas por objetos externos.
@@ -24,19 +24,14 @@
 ## 🛠️ 2\. Estrategia y Justificación Técnica ### 
 
 🧰 Stack Tecnológico Utilizado 
-\* \*\*Lenguaje Principal:\*\* Python 3.10+ (Scripts \`.py\` modularizados). 
-\* \*\*Visión Computacional Pre-procesamiento:\*\* OpenCV, NumPy, Pillow.
-\* \*\*Framework de Deep Learning:\*\* PyTorch, Ultralytics YOLOv8 (Variante Nano \`yolov8n\`). 
-\* \*\*Backend REST API:\*\* Python + Flask, Flask-SQLAlchemy, Psycopg2\. 
-\* \*\*Base de Datos Relacional:\*\* PostgreSQL 15+ / pgAdmin 4\. 
-\* \*\*Frontend Web:\*\* React.js.
-\* \*\*Entorno de Entrenamiento:\*\* Google Colab (GPU T4) / Kaggle GPUs.
+Lenguaje Principal: Python 3.10+ (Scripts \.py\ modularizados). 
+Visión Computacional Pre-procesamiento: OpenCV, NumPy, Pillow.
+Framework de Deep Learning:PyTorch, Ultralytics YOLOn8v. 
+Backend REST API:Python + Flask, Flask-SQLAlchemy, Psycopg2 
+Base de Datos Relacional: PostgreSQL 15+ / pgAdmin 4\. 
+Frontend Web: React.js.
+Entorno de Entrenamiento:\*\* Google Colab (GPU T4) / Kaggle GPUs.
 
-### 💡 Justificación Técnica de las Decisiones
-\* \*\*¿Por qué YOLOv8 Nano (\`yolov8n\`)?:\*\* Ofrece el mejor equilibrio entre velocidad y precisión en entornos edge/retail. Garantiza mantener el consumo de VRAM en entrenamiento \\\\(\\le 4.0\\text{ GB}\\\\) (y \\\\(\\le 2.0\\text{ GB}\\\\) en inferencia) con una latencia entre 2 y 5 segundos por imagen. 
-\* \*\*¿Por qué Arquitectura Desacoplada en Scripts \`.py\`?:\*\* Se prohíbe el uso de Jupyter Notebooks en producción para evitar problemas de variables globales, garantizar la reproducibilidad autónoma del código y facilitar la integración continua en GitHub. 
-\* \*\*¿Por qué Desacoplamiento de Reglas de Negocio?:\*\* Los umbrales de clasificación operacionales (como el umbral crítico del 30%) se gestionan en la base de datos PostgreSQL (\`criterios\_clasificacion\`), permitiendo a la administración cambiar las reglas de negocio sin necesidad de reentrenar la red neuronal. 
----
 
 ## 🏗️ 3\. Arquitectura de la Solución La arquitectura de R.E.G.O.V.A. 
 
