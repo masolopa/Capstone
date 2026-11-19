@@ -1,0 +1,2376 @@
+{
+  "columnas": [
+    {
+      "tabla": "alertas",
+      "campo": "id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "a",
+      "predeterminado": null
+    },
+    {
+      "tabla": "alertas",
+      "campo": "resultado_id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "alertas",
+      "campo": "analisis_id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "alertas",
+      "campo": "motivo",
+      "tipo": "text",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "alertas",
+      "campo": "estado",
+      "tipo": "character varying(20)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "'pendiente'::character varying"
+    },
+    {
+      "tabla": "alertas",
+      "campo": "responsable_id",
+      "tipo": "bigint",
+      "obligatorio": false,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "alertas",
+      "campo": "cerrada_por",
+      "tipo": "bigint",
+      "obligatorio": false,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "alertas",
+      "campo": "creada_en",
+      "tipo": "timestamp with time zone",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "CURRENT_TIMESTAMP"
+    },
+    {
+      "tabla": "alertas",
+      "campo": "cerrada_en",
+      "tipo": "timestamp with time zone",
+      "obligatorio": false,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "analisis",
+      "campo": "id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "a",
+      "predeterminado": null
+    },
+    {
+      "tabla": "analisis",
+      "campo": "imagen_id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "analisis",
+      "campo": "gondola_id",
+      "tipo": "bigint",
+      "obligatorio": false,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "analisis",
+      "campo": "local_id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "analisis",
+      "campo": "ejecutado_por",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "analisis",
+      "campo": "configuracion_id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "analisis",
+      "campo": "modelo_id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "analisis",
+      "campo": "estado",
+      "tipo": "character varying(20)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "'pendiente'::character varying"
+    },
+    {
+      "tabla": "analisis",
+      "campo": "referencia",
+      "tipo": "character varying(100)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "''::character varying"
+    },
+    {
+      "tabla": "analisis",
+      "campo": "observaciones",
+      "tipo": "character varying(500)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "''::character varying"
+    },
+    {
+      "tabla": "analisis",
+      "campo": "parametros",
+      "tipo": "jsonb",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "'{}'::jsonb"
+    },
+    {
+      "tabla": "analisis",
+      "campo": "creado_en",
+      "tipo": "timestamp with time zone",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "CURRENT_TIMESTAMP"
+    },
+    {
+      "tabla": "analisis",
+      "campo": "iniciado_en",
+      "tipo": "timestamp with time zone",
+      "obligatorio": false,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "analisis",
+      "campo": "finalizado_en",
+      "tipo": "timestamp with time zone",
+      "obligatorio": false,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "analisis",
+      "campo": "duracion_ms",
+      "tipo": "bigint",
+      "obligatorio": false,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "analisis",
+      "campo": "error_detalle",
+      "tipo": "text",
+      "obligatorio": false,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "analisis",
+      "campo": "eliminado_en",
+      "tipo": "timestamp with time zone",
+      "obligatorio": false,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "analisis",
+      "campo": "pasillo",
+      "tipo": "character varying(50)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "archivos_analisis",
+      "campo": "id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "a",
+      "predeterminado": null
+    },
+    {
+      "tabla": "archivos_analisis",
+      "campo": "analisis_id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "archivos_analisis",
+      "campo": "tipo",
+      "tipo": "character varying(20)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "archivos_analisis",
+      "campo": "uri",
+      "tipo": "text",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "archivos_analisis",
+      "campo": "sha256",
+      "tipo": "character varying(64)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "archivos_analisis",
+      "campo": "bytes",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "archivos_analisis",
+      "campo": "creado_en",
+      "tipo": "timestamp with time zone",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "CURRENT_TIMESTAMP"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "campo": "id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "a",
+      "predeterminado": null
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "campo": "local_id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "campo": "version",
+      "tipo": "integer",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "campo": "umbral_critico",
+      "tipo": "numeric(5,2)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "campo": "umbral_bajo",
+      "tipo": "numeric(5,2)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "campo": "max_carga_mb",
+      "tipo": "numeric(6,2)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "campo": "lado_minimo_px",
+      "tipo": "integer",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "campo": "creado_por",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "campo": "creado_en",
+      "tipo": "timestamp with time zone",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "CURRENT_TIMESTAMP"
+    },
+    {
+      "tabla": "configuraciones_vigentes",
+      "campo": "local_id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "configuraciones_vigentes",
+      "campo": "configuracion_id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "eventos_auditoria",
+      "campo": "id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "a",
+      "predeterminado": null
+    },
+    {
+      "tabla": "eventos_auditoria",
+      "campo": "actor_id",
+      "tipo": "bigint",
+      "obligatorio": false,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "eventos_auditoria",
+      "campo": "accion",
+      "tipo": "character varying(60)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "eventos_auditoria",
+      "campo": "entidad",
+      "tipo": "character varying(60)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "eventos_auditoria",
+      "campo": "entidad_id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "eventos_auditoria",
+      "campo": "detalle",
+      "tipo": "jsonb",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "'{}'::jsonb"
+    },
+    {
+      "tabla": "eventos_auditoria",
+      "campo": "creado_en",
+      "tipo": "timestamp with time zone",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "CURRENT_TIMESTAMP"
+    },
+    {
+      "tabla": "gondolas",
+      "campo": "id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "a",
+      "predeterminado": null
+    },
+    {
+      "tabla": "gondolas",
+      "campo": "local_id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "gondolas",
+      "campo": "codigo",
+      "tipo": "character varying(50)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "gondolas",
+      "campo": "pasillo",
+      "tipo": "character varying(50)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "gondolas",
+      "campo": "descripcion",
+      "tipo": "text",
+      "obligatorio": false,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "gondolas",
+      "campo": "activo",
+      "tipo": "boolean",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "true"
+    },
+    {
+      "tabla": "gondolas",
+      "campo": "creado_en",
+      "tipo": "timestamp with time zone",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "CURRENT_TIMESTAMP"
+    },
+    {
+      "tabla": "imagenes",
+      "campo": "id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "a",
+      "predeterminado": null
+    },
+    {
+      "tabla": "imagenes",
+      "campo": "local_id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "imagenes",
+      "campo": "gondola_id",
+      "tipo": "bigint",
+      "obligatorio": false,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "imagenes",
+      "campo": "cargada_por",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "imagenes",
+      "campo": "uri",
+      "tipo": "text",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "imagenes",
+      "campo": "nombre_original",
+      "tipo": "text",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "imagenes",
+      "campo": "mime",
+      "tipo": "character varying(30)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "imagenes",
+      "campo": "sha256",
+      "tipo": "character varying(64)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "imagenes",
+      "campo": "bytes",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "imagenes",
+      "campo": "ancho_px",
+      "tipo": "integer",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "imagenes",
+      "campo": "alto_px",
+      "tipo": "integer",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "imagenes",
+      "campo": "capturada_en",
+      "tipo": "timestamp with time zone",
+      "obligatorio": false,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "imagenes",
+      "campo": "cargada_en",
+      "tipo": "timestamp with time zone",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "CURRENT_TIMESTAMP"
+    },
+    {
+      "tabla": "locales",
+      "campo": "id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "a",
+      "predeterminado": null
+    },
+    {
+      "tabla": "locales",
+      "campo": "codigo",
+      "tipo": "character varying(50)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "locales",
+      "campo": "nombre",
+      "tipo": "character varying(150)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "locales",
+      "campo": "direccion",
+      "tipo": "text",
+      "obligatorio": false,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "locales",
+      "campo": "activo",
+      "tipo": "boolean",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "true"
+    },
+    {
+      "tabla": "locales",
+      "campo": "creado_en",
+      "tipo": "timestamp with time zone",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "CURRENT_TIMESTAMP"
+    },
+    {
+      "tabla": "modelos_vision",
+      "campo": "id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "a",
+      "predeterminado": null
+    },
+    {
+      "tabla": "modelos_vision",
+      "campo": "nombre",
+      "tipo": "character varying(100)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "modelos_vision",
+      "campo": "version",
+      "tipo": "character varying(60)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "modelos_vision",
+      "campo": "metodo",
+      "tipo": "character varying(20)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "modelos_vision",
+      "campo": "artefacto_uri",
+      "tipo": "text",
+      "obligatorio": false,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "modelos_vision",
+      "campo": "sha256",
+      "tipo": "character varying(64)",
+      "obligatorio": false,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "modelos_vision",
+      "campo": "metricas",
+      "tipo": "jsonb",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "'{}'::jsonb"
+    },
+    {
+      "tabla": "modelos_vision",
+      "campo": "creado_en",
+      "tipo": "timestamp with time zone",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "CURRENT_TIMESTAMP"
+    },
+    {
+      "tabla": "resultados",
+      "campo": "id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "a",
+      "predeterminado": null
+    },
+    {
+      "tabla": "resultados",
+      "campo": "analisis_id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "resultados",
+      "campo": "disponibilidad_pct",
+      "tipo": "numeric(5,2)",
+      "obligatorio": false,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "resultados",
+      "campo": "estado_operacional",
+      "tipo": "character varying(20)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "resultados",
+      "campo": "requiere_revision",
+      "tipo": "boolean",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "false"
+    },
+    {
+      "tabla": "resultados",
+      "campo": "area_evaluable_px",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "resultados",
+      "campo": "detalle",
+      "tipo": "jsonb",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "'{}'::jsonb"
+    },
+    {
+      "tabla": "revisiones",
+      "campo": "id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "a",
+      "predeterminado": null
+    },
+    {
+      "tabla": "revisiones",
+      "campo": "resultado_id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "revisiones",
+      "campo": "analisis_id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "revisiones",
+      "campo": "revisor_id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "revisiones",
+      "campo": "decision",
+      "tipo": "character varying(20)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "revisiones",
+      "campo": "correccion",
+      "tipo": "jsonb",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "'{}'::jsonb"
+    },
+    {
+      "tabla": "revisiones",
+      "campo": "comentario",
+      "tipo": "text",
+      "obligatorio": false,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "revisiones",
+      "campo": "creado_en",
+      "tipo": "timestamp with time zone",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "CURRENT_TIMESTAMP"
+    },
+    {
+      "tabla": "sesiones",
+      "campo": "token_hash",
+      "tipo": "character varying(64)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "sesiones",
+      "campo": "usuario_id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "sesiones",
+      "campo": "creada_en",
+      "tipo": "timestamp with time zone",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "CURRENT_TIMESTAMP"
+    },
+    {
+      "tabla": "sesiones",
+      "campo": "expira_en",
+      "tipo": "timestamp with time zone",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "usuarios",
+      "campo": "id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "a",
+      "predeterminado": null
+    },
+    {
+      "tabla": "usuarios",
+      "campo": "local_id",
+      "tipo": "bigint",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "usuarios",
+      "campo": "codigo",
+      "tipo": "character varying(50)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "usuarios",
+      "campo": "nombre",
+      "tipo": "character varying(150)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "usuarios",
+      "campo": "email",
+      "tipo": "character varying(254)",
+      "obligatorio": false,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "usuarios",
+      "campo": "password_hash",
+      "tipo": "text",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "usuarios",
+      "campo": "rol",
+      "tipo": "character varying(20)",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": null
+    },
+    {
+      "tabla": "usuarios",
+      "campo": "activo",
+      "tipo": "boolean",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "true"
+    },
+    {
+      "tabla": "usuarios",
+      "campo": "creado_en",
+      "tipo": "timestamp with time zone",
+      "obligatorio": true,
+      "identidad": "",
+      "predeterminado": "CURRENT_TIMESTAMP"
+    },
+    {
+      "tabla": "usuarios",
+      "campo": "eliminado_en",
+      "tipo": "timestamp with time zone",
+      "obligatorio": false,
+      "identidad": "",
+      "predeterminado": null
+    }
+  ],
+  "restricciones": [
+    {
+      "tabla": "alertas",
+      "nombre": "alertas_analisis_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL analisis_id"
+    },
+    {
+      "tabla": "alertas",
+      "nombre": "alertas_cerrada_por_fkey",
+      "tipo": "f",
+      "definicion": "FOREIGN KEY (cerrada_por) REFERENCES usuarios(id) ON DELETE RESTRICT"
+    },
+    {
+      "tabla": "alertas",
+      "nombre": "alertas_check",
+      "tipo": "c",
+      "definicion": "CHECK (((((estado)::text = ANY ((ARRAY['atendida'::character varying, 'descartada'::character varying])::text[])) AND (cerrada_en IS NOT NULL) AND (cerrada_por IS NOT NULL)) OR (((estado)::text = ANY ((ARRAY['pendiente'::character varying, 'en_atencion'::character varying])::text[])) AND (cerrada_en IS NULL) AND (cerrada_por IS NULL))))"
+    },
+    {
+      "tabla": "alertas",
+      "nombre": "alertas_check1",
+      "tipo": "c",
+      "definicion": "CHECK (((cerrada_en IS NULL) OR (cerrada_en >= creada_en)))"
+    },
+    {
+      "tabla": "alertas",
+      "nombre": "alertas_creada_en_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL creada_en"
+    },
+    {
+      "tabla": "alertas",
+      "nombre": "alertas_estado_check",
+      "tipo": "c",
+      "definicion": "CHECK (((estado)::text = ANY ((ARRAY['pendiente'::character varying, 'en_atencion'::character varying, 'atendida'::character varying, 'descartada'::character varying])::text[])))"
+    },
+    {
+      "tabla": "alertas",
+      "nombre": "alertas_estado_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL estado"
+    },
+    {
+      "tabla": "alertas",
+      "nombre": "alertas_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL id"
+    },
+    {
+      "tabla": "alertas",
+      "nombre": "alertas_motivo_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL motivo"
+    },
+    {
+      "tabla": "alertas",
+      "nombre": "alertas_pkey",
+      "tipo": "p",
+      "definicion": "PRIMARY KEY (id)"
+    },
+    {
+      "tabla": "alertas",
+      "nombre": "alertas_responsable_id_fkey",
+      "tipo": "f",
+      "definicion": "FOREIGN KEY (responsable_id) REFERENCES usuarios(id) ON DELETE RESTRICT"
+    },
+    {
+      "tabla": "alertas",
+      "nombre": "alertas_resultado_id_analisis_id_fkey",
+      "tipo": "f",
+      "definicion": "FOREIGN KEY (resultado_id, analisis_id) REFERENCES resultados(id, analisis_id) ON DELETE RESTRICT"
+    },
+    {
+      "tabla": "alertas",
+      "nombre": "alertas_resultado_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL resultado_id"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_check",
+      "tipo": "c",
+      "definicion": "CHECK (((finalizado_en IS NULL) OR ((iniciado_en IS NOT NULL) AND (finalizado_en >= iniciado_en))))"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_check1",
+      "tipo": "c",
+      "definicion": "CHECK ((((estado)::text <> ALL ((ARRAY['exitoso'::character varying, 'fallido'::character varying])::text[])) OR (finalizado_en IS NOT NULL)))"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_check2",
+      "tipo": "c",
+      "definicion": "CHECK ((((estado)::text <> 'fallido'::text) OR (error_detalle IS NOT NULL)))"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_configuracion_id_local_id_fkey",
+      "tipo": "f",
+      "definicion": "FOREIGN KEY (configuracion_id, local_id) REFERENCES configuraciones_analisis(id, local_id) ON DELETE RESTRICT"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_configuracion_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL configuracion_id"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_creado_en_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL creado_en"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_duracion_ms_check",
+      "tipo": "c",
+      "definicion": "CHECK ((duracion_ms >= 0))"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_ejecutado_por_local_id_fkey",
+      "tipo": "f",
+      "definicion": "FOREIGN KEY (ejecutado_por, local_id) REFERENCES usuarios(id, local_id) ON DELETE RESTRICT"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_ejecutado_por_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL ejecutado_por"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_estado_check",
+      "tipo": "c",
+      "definicion": "CHECK (((estado)::text = ANY ((ARRAY['pendiente'::character varying, 'procesando'::character varying, 'exitoso'::character varying, 'fallido'::character varying])::text[])))"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_estado_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL estado"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_id_gondola_id_key",
+      "tipo": "u",
+      "definicion": "UNIQUE (id, gondola_id)"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL id"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_imagen_id_gondola_id_local_id_fkey",
+      "tipo": "f",
+      "definicion": "FOREIGN KEY (imagen_id, gondola_id, local_id) REFERENCES imagenes(id, gondola_id, local_id) ON DELETE RESTRICT"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_imagen_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL imagen_id"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_imagen_local_fk",
+      "tipo": "f",
+      "definicion": "FOREIGN KEY (imagen_id, local_id) REFERENCES imagenes(id, local_id) ON DELETE RESTRICT"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_local_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL local_id"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_modelo_id_fkey",
+      "tipo": "f",
+      "definicion": "FOREIGN KEY (modelo_id) REFERENCES modelos_vision(id) ON DELETE RESTRICT"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_modelo_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL modelo_id"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_observaciones_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL observaciones"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_parametros_check",
+      "tipo": "c",
+      "definicion": "CHECK ((jsonb_typeof(parametros) = 'object'::text))"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_parametros_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL parametros"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_pasillo_no_vacio",
+      "tipo": "c",
+      "definicion": "CHECK ((btrim((pasillo)::text) <> ''::text))"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_pasillo_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL pasillo"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_pkey",
+      "tipo": "p",
+      "definicion": "PRIMARY KEY (id)"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_referencia_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL referencia"
+    },
+    {
+      "tabla": "archivos_analisis",
+      "nombre": "archivos_analisis_analisis_id_fkey",
+      "tipo": "f",
+      "definicion": "FOREIGN KEY (analisis_id) REFERENCES analisis(id) ON DELETE RESTRICT"
+    },
+    {
+      "tabla": "archivos_analisis",
+      "nombre": "archivos_analisis_analisis_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL analisis_id"
+    },
+    {
+      "tabla": "archivos_analisis",
+      "nombre": "archivos_analisis_bytes_check",
+      "tipo": "c",
+      "definicion": "CHECK ((bytes > 0))"
+    },
+    {
+      "tabla": "archivos_analisis",
+      "nombre": "archivos_analisis_bytes_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL bytes"
+    },
+    {
+      "tabla": "archivos_analisis",
+      "nombre": "archivos_analisis_creado_en_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL creado_en"
+    },
+    {
+      "tabla": "archivos_analisis",
+      "nombre": "archivos_analisis_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL id"
+    },
+    {
+      "tabla": "archivos_analisis",
+      "nombre": "archivos_analisis_pkey",
+      "tipo": "p",
+      "definicion": "PRIMARY KEY (id)"
+    },
+    {
+      "tabla": "archivos_analisis",
+      "nombre": "archivos_analisis_sha256_check",
+      "tipo": "c",
+      "definicion": "CHECK (((sha256)::text ~ '^[0-9a-f]{64}$'::text))"
+    },
+    {
+      "tabla": "archivos_analisis",
+      "nombre": "archivos_analisis_sha256_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL sha256"
+    },
+    {
+      "tabla": "archivos_analisis",
+      "nombre": "archivos_analisis_tipo_check",
+      "tipo": "c",
+      "definicion": "CHECK (((tipo)::text = ANY ((ARRAY['overlay'::character varying, 'reporte_pdf'::character varying, 'mascara'::character varying])::text[])))"
+    },
+    {
+      "tabla": "archivos_analisis",
+      "nombre": "archivos_analisis_tipo_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL tipo"
+    },
+    {
+      "tabla": "archivos_analisis",
+      "nombre": "archivos_analisis_uri_check",
+      "tipo": "c",
+      "definicion": "CHECK ((btrim(uri) <> ''::text))"
+    },
+    {
+      "tabla": "archivos_analisis",
+      "nombre": "archivos_analisis_uri_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL uri"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_analisis_check",
+      "tipo": "c",
+      "definicion": "CHECK ((umbral_critico < umbral_bajo))"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_analisis_creado_en_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL creado_en"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_analisis_creado_por_local_id_fkey",
+      "tipo": "f",
+      "definicion": "FOREIGN KEY (creado_por, local_id) REFERENCES usuarios(id, local_id) ON DELETE RESTRICT"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_analisis_creado_por_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL creado_por"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_analisis_id_local_id_key",
+      "tipo": "u",
+      "definicion": "UNIQUE (id, local_id)"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_analisis_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL id"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_analisis_lado_minimo_px_check",
+      "tipo": "c",
+      "definicion": "CHECK ((lado_minimo_px >= 50))"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_analisis_lado_minimo_px_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL lado_minimo_px"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_analisis_local_id_fkey",
+      "tipo": "f",
+      "definicion": "FOREIGN KEY (local_id) REFERENCES locales(id) ON DELETE RESTRICT"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_analisis_local_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL local_id"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_analisis_local_id_version_key",
+      "tipo": "u",
+      "definicion": "UNIQUE (local_id, version)"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_analisis_max_carga_mb_check",
+      "tipo": "c",
+      "definicion": "CHECK (((max_carga_mb > (0)::numeric) AND (max_carga_mb <= (50)::numeric)))"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_analisis_max_carga_mb_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL max_carga_mb"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_analisis_pkey",
+      "tipo": "p",
+      "definicion": "PRIMARY KEY (id)"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_analisis_umbral_bajo_check",
+      "tipo": "c",
+      "definicion": "CHECK ((umbral_bajo <= (100)::numeric))"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_analisis_umbral_bajo_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL umbral_bajo"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_analisis_umbral_critico_check",
+      "tipo": "c",
+      "definicion": "CHECK ((umbral_critico > (0)::numeric))"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_analisis_umbral_critico_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL umbral_critico"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_analisis_version_check",
+      "tipo": "c",
+      "definicion": "CHECK ((version > 0))"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_analisis_version_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL version"
+    },
+    {
+      "tabla": "configuraciones_vigentes",
+      "nombre": "configuraciones_vigentes_configuracion_id_local_id_fkey",
+      "tipo": "f",
+      "definicion": "FOREIGN KEY (configuracion_id, local_id) REFERENCES configuraciones_analisis(id, local_id) ON DELETE RESTRICT"
+    },
+    {
+      "tabla": "configuraciones_vigentes",
+      "nombre": "configuraciones_vigentes_configuracion_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL configuracion_id"
+    },
+    {
+      "tabla": "configuraciones_vigentes",
+      "nombre": "configuraciones_vigentes_local_id_fkey",
+      "tipo": "f",
+      "definicion": "FOREIGN KEY (local_id) REFERENCES locales(id) ON DELETE RESTRICT"
+    },
+    {
+      "tabla": "configuraciones_vigentes",
+      "nombre": "configuraciones_vigentes_local_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL local_id"
+    },
+    {
+      "tabla": "configuraciones_vigentes",
+      "nombre": "configuraciones_vigentes_pkey",
+      "tipo": "p",
+      "definicion": "PRIMARY KEY (local_id)"
+    },
+    {
+      "tabla": "eventos_auditoria",
+      "nombre": "eventos_auditoria_accion_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL accion"
+    },
+    {
+      "tabla": "eventos_auditoria",
+      "nombre": "eventos_auditoria_actor_id_fkey",
+      "tipo": "f",
+      "definicion": "FOREIGN KEY (actor_id) REFERENCES usuarios(id) ON DELETE RESTRICT"
+    },
+    {
+      "tabla": "eventos_auditoria",
+      "nombre": "eventos_auditoria_creado_en_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL creado_en"
+    },
+    {
+      "tabla": "eventos_auditoria",
+      "nombre": "eventos_auditoria_detalle_check",
+      "tipo": "c",
+      "definicion": "CHECK ((jsonb_typeof(detalle) = 'object'::text))"
+    },
+    {
+      "tabla": "eventos_auditoria",
+      "nombre": "eventos_auditoria_detalle_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL detalle"
+    },
+    {
+      "tabla": "eventos_auditoria",
+      "nombre": "eventos_auditoria_entidad_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL entidad_id"
+    },
+    {
+      "tabla": "eventos_auditoria",
+      "nombre": "eventos_auditoria_entidad_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL entidad"
+    },
+    {
+      "tabla": "eventos_auditoria",
+      "nombre": "eventos_auditoria_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL id"
+    },
+    {
+      "tabla": "eventos_auditoria",
+      "nombre": "eventos_auditoria_pkey",
+      "tipo": "p",
+      "definicion": "PRIMARY KEY (id)"
+    },
+    {
+      "tabla": "gondolas",
+      "nombre": "gondolas_activo_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL activo"
+    },
+    {
+      "tabla": "gondolas",
+      "nombre": "gondolas_codigo_check",
+      "tipo": "c",
+      "definicion": "CHECK ((btrim((codigo)::text) <> ''::text))"
+    },
+    {
+      "tabla": "gondolas",
+      "nombre": "gondolas_codigo_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL codigo"
+    },
+    {
+      "tabla": "gondolas",
+      "nombre": "gondolas_creado_en_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL creado_en"
+    },
+    {
+      "tabla": "gondolas",
+      "nombre": "gondolas_id_local_id_key",
+      "tipo": "u",
+      "definicion": "UNIQUE (id, local_id)"
+    },
+    {
+      "tabla": "gondolas",
+      "nombre": "gondolas_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL id"
+    },
+    {
+      "tabla": "gondolas",
+      "nombre": "gondolas_local_id_codigo_key",
+      "tipo": "u",
+      "definicion": "UNIQUE (local_id, codigo)"
+    },
+    {
+      "tabla": "gondolas",
+      "nombre": "gondolas_local_id_fkey",
+      "tipo": "f",
+      "definicion": "FOREIGN KEY (local_id) REFERENCES locales(id) ON DELETE RESTRICT"
+    },
+    {
+      "tabla": "gondolas",
+      "nombre": "gondolas_local_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL local_id"
+    },
+    {
+      "tabla": "gondolas",
+      "nombre": "gondolas_pasillo_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL pasillo"
+    },
+    {
+      "tabla": "gondolas",
+      "nombre": "gondolas_pkey",
+      "tipo": "p",
+      "definicion": "PRIMARY KEY (id)"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_alto_px_check",
+      "tipo": "c",
+      "definicion": "CHECK ((alto_px > 0))"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_alto_px_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL alto_px"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_ancho_px_check",
+      "tipo": "c",
+      "definicion": "CHECK ((ancho_px > 0))"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_ancho_px_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL ancho_px"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_bytes_check",
+      "tipo": "c",
+      "definicion": "CHECK ((bytes > 0))"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_bytes_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL bytes"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_cargada_en_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL cargada_en"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_cargada_por_local_id_fkey",
+      "tipo": "f",
+      "definicion": "FOREIGN KEY (cargada_por, local_id) REFERENCES usuarios(id, local_id) ON DELETE RESTRICT"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_cargada_por_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL cargada_por"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_gondola_id_local_id_fkey",
+      "tipo": "f",
+      "definicion": "FOREIGN KEY (gondola_id, local_id) REFERENCES gondolas(id, local_id) ON DELETE RESTRICT"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_id_gondola_id_local_id_key",
+      "tipo": "u",
+      "definicion": "UNIQUE (id, gondola_id, local_id)"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL id"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_local_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL local_id"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_mime_check",
+      "tipo": "c",
+      "definicion": "CHECK (((mime)::text = ANY ((ARRAY['image/jpeg'::character varying, 'image/png'::character varying, 'image/webp'::character varying])::text[])))"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_mime_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL mime"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_nombre_original_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL nombre_original"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_pkey",
+      "tipo": "p",
+      "definicion": "PRIMARY KEY (id)"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_sha256_check",
+      "tipo": "c",
+      "definicion": "CHECK (((sha256)::text ~ '^[0-9a-f]{64}$'::text))"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_sha256_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL sha256"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_uri_check",
+      "tipo": "c",
+      "definicion": "CHECK ((btrim(uri) <> ''::text))"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_uri_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL uri"
+    },
+    {
+      "tabla": "locales",
+      "nombre": "locales_activo_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL activo"
+    },
+    {
+      "tabla": "locales",
+      "nombre": "locales_codigo_check",
+      "tipo": "c",
+      "definicion": "CHECK ((btrim((codigo)::text) <> ''::text))"
+    },
+    {
+      "tabla": "locales",
+      "nombre": "locales_codigo_key",
+      "tipo": "u",
+      "definicion": "UNIQUE (codigo)"
+    },
+    {
+      "tabla": "locales",
+      "nombre": "locales_codigo_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL codigo"
+    },
+    {
+      "tabla": "locales",
+      "nombre": "locales_creado_en_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL creado_en"
+    },
+    {
+      "tabla": "locales",
+      "nombre": "locales_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL id"
+    },
+    {
+      "tabla": "locales",
+      "nombre": "locales_nombre_check",
+      "tipo": "c",
+      "definicion": "CHECK ((btrim((nombre)::text) <> ''::text))"
+    },
+    {
+      "tabla": "locales",
+      "nombre": "locales_nombre_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL nombre"
+    },
+    {
+      "tabla": "locales",
+      "nombre": "locales_pkey",
+      "tipo": "p",
+      "definicion": "PRIMARY KEY (id)"
+    },
+    {
+      "tabla": "modelos_vision",
+      "nombre": "modelos_vision_check",
+      "tipo": "c",
+      "definicion": "CHECK ((((metodo)::text <> 'yolo'::text) OR ((artefacto_uri IS NOT NULL) AND (sha256 IS NOT NULL))))"
+    },
+    {
+      "tabla": "modelos_vision",
+      "nombre": "modelos_vision_creado_en_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL creado_en"
+    },
+    {
+      "tabla": "modelos_vision",
+      "nombre": "modelos_vision_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL id"
+    },
+    {
+      "tabla": "modelos_vision",
+      "nombre": "modelos_vision_metodo_check",
+      "tipo": "c",
+      "definicion": "CHECK (((metodo)::text = ANY ((ARRAY['heuristic'::character varying, 'yolo'::character varying])::text[])))"
+    },
+    {
+      "tabla": "modelos_vision",
+      "nombre": "modelos_vision_metodo_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL metodo"
+    },
+    {
+      "tabla": "modelos_vision",
+      "nombre": "modelos_vision_metricas_check",
+      "tipo": "c",
+      "definicion": "CHECK ((jsonb_typeof(metricas) = 'object'::text))"
+    },
+    {
+      "tabla": "modelos_vision",
+      "nombre": "modelos_vision_metricas_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL metricas"
+    },
+    {
+      "tabla": "modelos_vision",
+      "nombre": "modelos_vision_nombre_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL nombre"
+    },
+    {
+      "tabla": "modelos_vision",
+      "nombre": "modelos_vision_nombre_version_key",
+      "tipo": "u",
+      "definicion": "UNIQUE (nombre, version)"
+    },
+    {
+      "tabla": "modelos_vision",
+      "nombre": "modelos_vision_pkey",
+      "tipo": "p",
+      "definicion": "PRIMARY KEY (id)"
+    },
+    {
+      "tabla": "modelos_vision",
+      "nombre": "modelos_vision_sha256_check",
+      "tipo": "c",
+      "definicion": "CHECK (((sha256)::text ~ '^[0-9a-f]{64}$'::text))"
+    },
+    {
+      "tabla": "modelos_vision",
+      "nombre": "modelos_vision_version_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL version"
+    },
+    {
+      "tabla": "resultados",
+      "nombre": "resultados_analisis_id_fkey",
+      "tipo": "f",
+      "definicion": "FOREIGN KEY (analisis_id) REFERENCES analisis(id) ON DELETE RESTRICT"
+    },
+    {
+      "tabla": "resultados",
+      "nombre": "resultados_analisis_id_key",
+      "tipo": "u",
+      "definicion": "UNIQUE (analisis_id)"
+    },
+    {
+      "tabla": "resultados",
+      "nombre": "resultados_analisis_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL analisis_id"
+    },
+    {
+      "tabla": "resultados",
+      "nombre": "resultados_area_evaluable_px_check",
+      "tipo": "c",
+      "definicion": "CHECK ((area_evaluable_px >= 0))"
+    },
+    {
+      "tabla": "resultados",
+      "nombre": "resultados_area_evaluable_px_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL area_evaluable_px"
+    },
+    {
+      "tabla": "resultados",
+      "nombre": "resultados_check",
+      "tipo": "c",
+      "definicion": "CHECK (((((estado_operacional)::text = 'no_evaluable'::text) AND (disponibilidad_pct IS NULL)) OR (((estado_operacional)::text <> 'no_evaluable'::text) AND (disponibilidad_pct IS NOT NULL) AND (area_evaluable_px > 0))))"
+    },
+    {
+      "tabla": "resultados",
+      "nombre": "resultados_detalle_check",
+      "tipo": "c",
+      "definicion": "CHECK ((jsonb_typeof(detalle) = 'object'::text))"
+    },
+    {
+      "tabla": "resultados",
+      "nombre": "resultados_detalle_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL detalle"
+    },
+    {
+      "tabla": "resultados",
+      "nombre": "resultados_disponibilidad_pct_check",
+      "tipo": "c",
+      "definicion": "CHECK (((disponibilidad_pct >= (0)::numeric) AND (disponibilidad_pct <= (100)::numeric)))"
+    },
+    {
+      "tabla": "resultados",
+      "nombre": "resultados_estado_operacional_check",
+      "tipo": "c",
+      "definicion": "CHECK (((estado_operacional)::text = ANY ((ARRAY['aceptable'::character varying, 'baja'::character varying, 'critica'::character varying, 'no_evaluable'::character varying])::text[])))"
+    },
+    {
+      "tabla": "resultados",
+      "nombre": "resultados_estado_operacional_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL estado_operacional"
+    },
+    {
+      "tabla": "resultados",
+      "nombre": "resultados_id_analisis_id_key",
+      "tipo": "u",
+      "definicion": "UNIQUE (id, analisis_id)"
+    },
+    {
+      "tabla": "resultados",
+      "nombre": "resultados_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL id"
+    },
+    {
+      "tabla": "resultados",
+      "nombre": "resultados_pkey",
+      "tipo": "p",
+      "definicion": "PRIMARY KEY (id)"
+    },
+    {
+      "tabla": "resultados",
+      "nombre": "resultados_requiere_revision_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL requiere_revision"
+    },
+    {
+      "tabla": "revisiones",
+      "nombre": "revisiones_analisis_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL analisis_id"
+    },
+    {
+      "tabla": "revisiones",
+      "nombre": "revisiones_check",
+      "tipo": "c",
+      "definicion": "CHECK ((((decision)::text <> 'corregido'::text) OR (correccion <> '{}'::jsonb)))"
+    },
+    {
+      "tabla": "revisiones",
+      "nombre": "revisiones_correccion_check",
+      "tipo": "c",
+      "definicion": "CHECK ((jsonb_typeof(correccion) = 'object'::text))"
+    },
+    {
+      "tabla": "revisiones",
+      "nombre": "revisiones_correccion_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL correccion"
+    },
+    {
+      "tabla": "revisiones",
+      "nombre": "revisiones_creado_en_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL creado_en"
+    },
+    {
+      "tabla": "revisiones",
+      "nombre": "revisiones_decision_check",
+      "tipo": "c",
+      "definicion": "CHECK (((decision)::text = ANY ((ARRAY['confirmado'::character varying, 'corregido'::character varying, 'descartado'::character varying])::text[])))"
+    },
+    {
+      "tabla": "revisiones",
+      "nombre": "revisiones_decision_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL decision"
+    },
+    {
+      "tabla": "revisiones",
+      "nombre": "revisiones_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL id"
+    },
+    {
+      "tabla": "revisiones",
+      "nombre": "revisiones_pkey",
+      "tipo": "p",
+      "definicion": "PRIMARY KEY (id)"
+    },
+    {
+      "tabla": "revisiones",
+      "nombre": "revisiones_resultado_id_analisis_id_fkey",
+      "tipo": "f",
+      "definicion": "FOREIGN KEY (resultado_id, analisis_id) REFERENCES resultados(id, analisis_id) ON DELETE RESTRICT"
+    },
+    {
+      "tabla": "revisiones",
+      "nombre": "revisiones_resultado_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL resultado_id"
+    },
+    {
+      "tabla": "revisiones",
+      "nombre": "revisiones_revisor_id_fkey",
+      "tipo": "f",
+      "definicion": "FOREIGN KEY (revisor_id) REFERENCES usuarios(id) ON DELETE RESTRICT"
+    },
+    {
+      "tabla": "revisiones",
+      "nombre": "revisiones_revisor_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL revisor_id"
+    },
+    {
+      "tabla": "sesiones",
+      "nombre": "sesiones_check",
+      "tipo": "c",
+      "definicion": "CHECK ((expira_en > creada_en))"
+    },
+    {
+      "tabla": "sesiones",
+      "nombre": "sesiones_creada_en_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL creada_en"
+    },
+    {
+      "tabla": "sesiones",
+      "nombre": "sesiones_expira_en_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL expira_en"
+    },
+    {
+      "tabla": "sesiones",
+      "nombre": "sesiones_pkey",
+      "tipo": "p",
+      "definicion": "PRIMARY KEY (token_hash)"
+    },
+    {
+      "tabla": "sesiones",
+      "nombre": "sesiones_token_hash_check",
+      "tipo": "c",
+      "definicion": "CHECK (((token_hash)::text ~ '^[0-9a-f]{64}$'::text))"
+    },
+    {
+      "tabla": "sesiones",
+      "nombre": "sesiones_token_hash_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL token_hash"
+    },
+    {
+      "tabla": "sesiones",
+      "nombre": "sesiones_usuario_id_fkey",
+      "tipo": "f",
+      "definicion": "FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE RESTRICT"
+    },
+    {
+      "tabla": "sesiones",
+      "nombre": "sesiones_usuario_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL usuario_id"
+    },
+    {
+      "tabla": "usuarios",
+      "nombre": "usuarios_activo_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL activo"
+    },
+    {
+      "tabla": "usuarios",
+      "nombre": "usuarios_check",
+      "tipo": "c",
+      "definicion": "CHECK (((eliminado_en IS NULL) OR (NOT activo)))"
+    },
+    {
+      "tabla": "usuarios",
+      "nombre": "usuarios_codigo_key",
+      "tipo": "u",
+      "definicion": "UNIQUE (codigo)"
+    },
+    {
+      "tabla": "usuarios",
+      "nombre": "usuarios_codigo_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL codigo"
+    },
+    {
+      "tabla": "usuarios",
+      "nombre": "usuarios_creado_en_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL creado_en"
+    },
+    {
+      "tabla": "usuarios",
+      "nombre": "usuarios_id_local_id_key",
+      "tipo": "u",
+      "definicion": "UNIQUE (id, local_id)"
+    },
+    {
+      "tabla": "usuarios",
+      "nombre": "usuarios_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL id"
+    },
+    {
+      "tabla": "usuarios",
+      "nombre": "usuarios_local_id_fkey",
+      "tipo": "f",
+      "definicion": "FOREIGN KEY (local_id) REFERENCES locales(id) ON DELETE RESTRICT"
+    },
+    {
+      "tabla": "usuarios",
+      "nombre": "usuarios_local_id_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL local_id"
+    },
+    {
+      "tabla": "usuarios",
+      "nombre": "usuarios_nombre_check",
+      "tipo": "c",
+      "definicion": "CHECK ((btrim((nombre)::text) <> ''::text))"
+    },
+    {
+      "tabla": "usuarios",
+      "nombre": "usuarios_nombre_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL nombre"
+    },
+    {
+      "tabla": "usuarios",
+      "nombre": "usuarios_password_hash_check",
+      "tipo": "c",
+      "definicion": "CHECK ((btrim(password_hash) <> ''::text))"
+    },
+    {
+      "tabla": "usuarios",
+      "nombre": "usuarios_password_hash_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL password_hash"
+    },
+    {
+      "tabla": "usuarios",
+      "nombre": "usuarios_pkey",
+      "tipo": "p",
+      "definicion": "PRIMARY KEY (id)"
+    },
+    {
+      "tabla": "usuarios",
+      "nombre": "usuarios_rol_check",
+      "tipo": "c",
+      "definicion": "CHECK (((rol)::text = ANY ((ARRAY['administrador'::character varying, 'supervisor'::character varying, 'reponedor'::character varying])::text[])))"
+    },
+    {
+      "tabla": "usuarios",
+      "nombre": "usuarios_rol_not_null",
+      "tipo": "n",
+      "definicion": "NOT NULL rol"
+    }
+  ],
+  "indices": [
+    {
+      "tabla": "alertas",
+      "nombre": "alertas_cierre_idx",
+      "definicion": "CREATE INDEX alertas_cierre_idx ON regova.alertas USING btree (cerrada_por)"
+    },
+    {
+      "tabla": "alertas",
+      "nombre": "alertas_pendientes_idx",
+      "definicion": "CREATE INDEX alertas_pendientes_idx ON regova.alertas USING btree (creada_en, id) WHERE ((estado)::text = ANY ((ARRAY['pendiente'::character varying, 'en_atencion'::character varying])::text[]))"
+    },
+    {
+      "tabla": "alertas",
+      "nombre": "alertas_pkey",
+      "definicion": "CREATE UNIQUE INDEX alertas_pkey ON regova.alertas USING btree (id)"
+    },
+    {
+      "tabla": "alertas",
+      "nombre": "alertas_responsable_idx",
+      "definicion": "CREATE INDEX alertas_responsable_idx ON regova.alertas USING btree (responsable_id, estado)"
+    },
+    {
+      "tabla": "alertas",
+      "nombre": "alertas_resultado_idx",
+      "definicion": "CREATE INDEX alertas_resultado_idx ON regova.alertas USING btree (resultado_id, analisis_id)"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_autor_idx",
+      "definicion": "CREATE INDEX analisis_autor_idx ON regova.analisis USING btree (ejecutado_por, local_id)"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_configuracion_idx",
+      "definicion": "CREATE INDEX analisis_configuracion_idx ON regova.analisis USING btree (configuracion_id, local_id)"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_gondola_fecha_idx",
+      "definicion": "CREATE INDEX analisis_gondola_fecha_idx ON regova.analisis USING btree (gondola_id, creado_en DESC, id DESC)"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_id_gondola_id_key",
+      "definicion": "CREATE UNIQUE INDEX analisis_id_gondola_id_key ON regova.analisis USING btree (id, gondola_id)"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_imagen_idx",
+      "definicion": "CREATE INDEX analisis_imagen_idx ON regova.analisis USING btree (imagen_id, gondola_id, local_id)"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_local_fecha_idx",
+      "definicion": "CREATE INDEX analisis_local_fecha_idx ON regova.analisis USING btree (local_id, creado_en DESC, id DESC) WHERE (eliminado_en IS NULL)"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_local_pasillo_fecha_idx",
+      "definicion": "CREATE INDEX analisis_local_pasillo_fecha_idx ON regova.analisis USING btree (local_id, pasillo, creado_en DESC, id DESC) WHERE (eliminado_en IS NULL)"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_modelo_idx",
+      "definicion": "CREATE INDEX analisis_modelo_idx ON regova.analisis USING btree (modelo_id)"
+    },
+    {
+      "tabla": "analisis",
+      "nombre": "analisis_pkey",
+      "definicion": "CREATE UNIQUE INDEX analisis_pkey ON regova.analisis USING btree (id)"
+    },
+    {
+      "tabla": "archivos_analisis",
+      "nombre": "archivos_analisis_idx",
+      "definicion": "CREATE INDEX archivos_analisis_idx ON regova.archivos_analisis USING btree (analisis_id, tipo)"
+    },
+    {
+      "tabla": "archivos_analisis",
+      "nombre": "archivos_analisis_pkey",
+      "definicion": "CREATE UNIQUE INDEX archivos_analisis_pkey ON regova.archivos_analisis USING btree (id)"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_analisis_id_local_id_key",
+      "definicion": "CREATE UNIQUE INDEX configuraciones_analisis_id_local_id_key ON regova.configuraciones_analisis USING btree (id, local_id)"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_analisis_local_id_version_key",
+      "definicion": "CREATE UNIQUE INDEX configuraciones_analisis_local_id_version_key ON regova.configuraciones_analisis USING btree (local_id, version)"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_analisis_pkey",
+      "definicion": "CREATE UNIQUE INDEX configuraciones_analisis_pkey ON regova.configuraciones_analisis USING btree (id)"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuraciones_autor_idx",
+      "definicion": "CREATE INDEX configuraciones_autor_idx ON regova.configuraciones_analisis USING btree (creado_por, local_id)"
+    },
+    {
+      "tabla": "configuraciones_vigentes",
+      "nombre": "configuraciones_vigentes_pkey",
+      "definicion": "CREATE UNIQUE INDEX configuraciones_vigentes_pkey ON regova.configuraciones_vigentes USING btree (local_id)"
+    },
+    {
+      "tabla": "eventos_auditoria",
+      "nombre": "auditoria_actor_idx",
+      "definicion": "CREATE INDEX auditoria_actor_idx ON regova.eventos_auditoria USING btree (actor_id, creado_en DESC)"
+    },
+    {
+      "tabla": "eventos_auditoria",
+      "nombre": "auditoria_entidad_idx",
+      "definicion": "CREATE INDEX auditoria_entidad_idx ON regova.eventos_auditoria USING btree (entidad, entidad_id, creado_en DESC)"
+    },
+    {
+      "tabla": "eventos_auditoria",
+      "nombre": "eventos_auditoria_pkey",
+      "definicion": "CREATE UNIQUE INDEX eventos_auditoria_pkey ON regova.eventos_auditoria USING btree (id)"
+    },
+    {
+      "tabla": "gondolas",
+      "nombre": "gondolas_id_local_id_key",
+      "definicion": "CREATE UNIQUE INDEX gondolas_id_local_id_key ON regova.gondolas USING btree (id, local_id)"
+    },
+    {
+      "tabla": "gondolas",
+      "nombre": "gondolas_local_id_codigo_key",
+      "definicion": "CREATE UNIQUE INDEX gondolas_local_id_codigo_key ON regova.gondolas USING btree (local_id, codigo)"
+    },
+    {
+      "tabla": "gondolas",
+      "nombre": "gondolas_pkey",
+      "definicion": "CREATE UNIQUE INDEX gondolas_pkey ON regova.gondolas USING btree (id)"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagen_id_local_uq",
+      "definicion": "CREATE UNIQUE INDEX imagen_id_local_uq ON regova.imagenes USING btree (id, local_id)"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_autor_idx",
+      "definicion": "CREATE INDEX imagenes_autor_idx ON regova.imagenes USING btree (cargada_por, local_id)"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_gondola_fecha_idx",
+      "definicion": "CREATE INDEX imagenes_gondola_fecha_idx ON regova.imagenes USING btree (gondola_id, cargada_en DESC, id DESC)"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_hash_idx",
+      "definicion": "CREATE INDEX imagenes_hash_idx ON regova.imagenes USING btree (sha256)"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_id_gondola_id_local_id_key",
+      "definicion": "CREATE UNIQUE INDEX imagenes_id_gondola_id_local_id_key ON regova.imagenes USING btree (id, gondola_id, local_id)"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagenes_pkey",
+      "definicion": "CREATE UNIQUE INDEX imagenes_pkey ON regova.imagenes USING btree (id)"
+    },
+    {
+      "tabla": "locales",
+      "nombre": "locales_codigo_key",
+      "definicion": "CREATE UNIQUE INDEX locales_codigo_key ON regova.locales USING btree (codigo)"
+    },
+    {
+      "tabla": "locales",
+      "nombre": "locales_pkey",
+      "definicion": "CREATE UNIQUE INDEX locales_pkey ON regova.locales USING btree (id)"
+    },
+    {
+      "tabla": "modelos_vision",
+      "nombre": "modelos_vision_nombre_version_key",
+      "definicion": "CREATE UNIQUE INDEX modelos_vision_nombre_version_key ON regova.modelos_vision USING btree (nombre, version)"
+    },
+    {
+      "tabla": "modelos_vision",
+      "nombre": "modelos_vision_pkey",
+      "definicion": "CREATE UNIQUE INDEX modelos_vision_pkey ON regova.modelos_vision USING btree (id)"
+    },
+    {
+      "tabla": "resultados",
+      "nombre": "resultados_analisis_id_key",
+      "definicion": "CREATE UNIQUE INDEX resultados_analisis_id_key ON regova.resultados USING btree (analisis_id)"
+    },
+    {
+      "tabla": "resultados",
+      "nombre": "resultados_id_analisis_id_key",
+      "definicion": "CREATE UNIQUE INDEX resultados_id_analisis_id_key ON regova.resultados USING btree (id, analisis_id)"
+    },
+    {
+      "tabla": "resultados",
+      "nombre": "resultados_pkey",
+      "definicion": "CREATE UNIQUE INDEX resultados_pkey ON regova.resultados USING btree (id)"
+    },
+    {
+      "tabla": "revisiones",
+      "nombre": "revisiones_pkey",
+      "definicion": "CREATE UNIQUE INDEX revisiones_pkey ON regova.revisiones USING btree (id)"
+    },
+    {
+      "tabla": "revisiones",
+      "nombre": "revisiones_resultado_idx",
+      "definicion": "CREATE INDEX revisiones_resultado_idx ON regova.revisiones USING btree (resultado_id, analisis_id, creado_en DESC)"
+    },
+    {
+      "tabla": "revisiones",
+      "nombre": "revisiones_revisor_idx",
+      "definicion": "CREATE INDEX revisiones_revisor_idx ON regova.revisiones USING btree (revisor_id)"
+    },
+    {
+      "tabla": "sesiones",
+      "nombre": "sesiones_expiracion_idx",
+      "definicion": "CREATE INDEX sesiones_expiracion_idx ON regova.sesiones USING btree (expira_en)"
+    },
+    {
+      "tabla": "sesiones",
+      "nombre": "sesiones_pkey",
+      "definicion": "CREATE UNIQUE INDEX sesiones_pkey ON regova.sesiones USING btree (token_hash)"
+    },
+    {
+      "tabla": "sesiones",
+      "nombre": "sesiones_usuario_idx",
+      "definicion": "CREATE INDEX sesiones_usuario_idx ON regova.sesiones USING btree (usuario_id)"
+    },
+    {
+      "tabla": "usuarios",
+      "nombre": "usuarios_codigo_key",
+      "definicion": "CREATE UNIQUE INDEX usuarios_codigo_key ON regova.usuarios USING btree (codigo)"
+    },
+    {
+      "tabla": "usuarios",
+      "nombre": "usuarios_email_uq",
+      "definicion": "CREATE UNIQUE INDEX usuarios_email_uq ON regova.usuarios USING btree (lower((email)::text)) WHERE (email IS NOT NULL)"
+    },
+    {
+      "tabla": "usuarios",
+      "nombre": "usuarios_id_local_id_key",
+      "definicion": "CREATE UNIQUE INDEX usuarios_id_local_id_key ON regova.usuarios USING btree (id, local_id)"
+    },
+    {
+      "tabla": "usuarios",
+      "nombre": "usuarios_local_idx",
+      "definicion": "CREATE INDEX usuarios_local_idx ON regova.usuarios USING btree (local_id)"
+    },
+    {
+      "tabla": "usuarios",
+      "nombre": "usuarios_pkey",
+      "definicion": "CREATE UNIQUE INDEX usuarios_pkey ON regova.usuarios USING btree (id)"
+    }
+  ],
+  "triggers": [
+    {
+      "tabla": "alertas",
+      "nombre": "alerta_actores",
+      "definicion": "CREATE TRIGGER alerta_actores BEFORE INSERT OR UPDATE ON regova.alertas FOR EACH ROW EXECUTE FUNCTION validar_actores()"
+    },
+    {
+      "tabla": "configuraciones_analisis",
+      "nombre": "configuracion_inmutable",
+      "definicion": "CREATE TRIGGER configuracion_inmutable BEFORE DELETE OR UPDATE ON regova.configuraciones_analisis FOR EACH ROW EXECUTE FUNCTION impedir_modificacion()"
+    },
+    {
+      "tabla": "eventos_auditoria",
+      "nombre": "auditoria_inmutable",
+      "definicion": "CREATE TRIGGER auditoria_inmutable BEFORE DELETE OR UPDATE ON regova.eventos_auditoria FOR EACH ROW EXECUTE FUNCTION impedir_modificacion()"
+    },
+    {
+      "tabla": "imagenes",
+      "nombre": "imagen_inmutable",
+      "definicion": "CREATE TRIGGER imagen_inmutable BEFORE DELETE OR UPDATE ON regova.imagenes FOR EACH ROW EXECUTE FUNCTION impedir_modificacion()"
+    },
+    {
+      "tabla": "modelos_vision",
+      "nombre": "modelo_inmutable",
+      "definicion": "CREATE TRIGGER modelo_inmutable BEFORE DELETE OR UPDATE ON regova.modelos_vision FOR EACH ROW EXECUTE FUNCTION impedir_modificacion()"
+    },
+    {
+      "tabla": "resultados",
+      "nombre": "resultado_inmutable",
+      "definicion": "CREATE TRIGGER resultado_inmutable BEFORE DELETE OR UPDATE ON regova.resultados FOR EACH ROW EXECUTE FUNCTION impedir_modificacion()"
+    },
+    {
+      "tabla": "resultados",
+      "nombre": "resultado_validar",
+      "definicion": "CREATE TRIGGER resultado_validar BEFORE INSERT ON regova.resultados FOR EACH ROW EXECUTE FUNCTION validar_resultado()"
+    },
+    {
+      "tabla": "revisiones",
+      "nombre": "revision_actores",
+      "definicion": "CREATE TRIGGER revision_actores BEFORE INSERT ON regova.revisiones FOR EACH ROW EXECUTE FUNCTION validar_actores()"
+    },
+    {
+      "tabla": "revisiones",
+      "nombre": "revision_inmutable",
+      "definicion": "CREATE TRIGGER revision_inmutable BEFORE DELETE OR UPDATE ON regova.revisiones FOR EACH ROW EXECUTE FUNCTION impedir_modificacion()"
+    }
+  ]
+}
