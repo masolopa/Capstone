@@ -1,14 +1,6 @@
 # REGOVA — Regiones de Góndola para Valoración de Ausencias
 
-![Python](https://img.shields.io/badge/python-3.13-blue?logo=python)  
-![FastAPI](https://img.shields.io/badge/FastAPI-0.115.0-009688?logo=fastapi)  
-![React](https://img.shields.io/badge/React-19.0.0-61DAFB?logo=react)  
-![TypeScript](https://img.shields.io/badge/TypeScript-5.5.2-blue?logo=typescript)  
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18.0-336791?logo=postgresql)  
-![YOLOv8](https://img.shields.io/badge/YOLOv8-n-FF6F61)  
-![OpenCV](https://img.shields.io/badge/OpenCV-4.10.0-5C3EE8?logo=opencv)  
-![Docker](https://img.shields.io/badge/Docker-24.0.6-2496ED?logo=docker)  
-![License](https://img.shields.io/badge/License-MIT-green)
+![Python](https://img.shields.io/badge/python-3.13-blue?logo=python)  ![FastAPI](https://img.shields.io/badge/FastAPI-0.115.0-009688?logo=fastapi)  ![React](https://img.shields.io/badge/React-19.0.0-61DAFB?logo=react)  ![TypeScript](https://img.shields.io/badge/TypeScript-5.5.2-blue?logo=typescript)  ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18.0-336791?logo=postgresql)  ![YOLOv8](https://img.shields.io/badge/YOLOv8-n-FF6F61) ![OpenCV](https://img.shields.io/badge/OpenCV-4.10.0-5C3EE8?logo=opencv)  ![Docker](https://img.shields.io/badge/Docker-24.0.6-2496ED?logo=docker)  ![License](https://img.shields.io/badge/License-MIT-green)
 
 ## 📖 Descripción del proyecto
 
