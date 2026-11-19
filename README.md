@@ -1,6 +1,6 @@
 # R.E.G.O.V.A.
 
-**Reposición Eficiente de Góndolas mediante Operación con Visión Artificial**
+**Regiones de Góndola para Valoración de Ausencias**
 
 Proyecto académico Capstone desarrollado a partir de una necesidad planteada por Walmart Chile. Su objetivo es analizar fotografías de góndolas para detectar productos y espacios vacíos visibles, y entregar indicadores que apoyen la reposición.
 
