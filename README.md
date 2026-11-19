@@ -108,17 +108,3 @@ npm run test
 
 Las acciones de CI ejecutan estas pruebas en cada push.
 
-## 🤝 Contribuir
-
-1. Haz fork del repositorio.  
-2. Crea una rama de características: `git checkout -b feature/tu‑feature`.  
-3. Sigue las guías de estilo de código (`black`, `prettier`, `flake8`).  
-4. Escribe pruebas para la nueva funcionalidad.  
-5. Abre un Pull Request con una descripción clara.
-
-Consulta `CONTRIBUTING.md` para más detalles.
-
-## 📄 Licencia
-
-Este proyecto está bajo la **Licencia MIT** – revisa el archivo `LICENSE` para más información.
-
