@@ -10,132 +10,123 @@
 ![Docker](https://img.shields.io/badge/Docker-24.0.6-2496ED?logo=docker)  
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-## 📖 Project Overview
+## 📖 Descripción del proyecto
 
-**REGOVA** is a full‑stack AI‑powered system that detects empty gondola shelves in retail stores and provides actionable insights to reduce out‑of‑stock situations. It combines computer‑vision models, a FastAPI backend, and a React/TypeScript frontend to deliver real‑time alerts and reporting.
+**REGOVA** es un sistema de IA de stack completo que detecta góndolas vacías en tiendas minoristas y brinda información accionable para reducir situaciones de stock‑out. Combina modelos de visión por computadora, un backend FastAPI y una interfaz React/TypeScript para ofrecer alertas y reportes en tiempo real.
 
-## 🎯 Problem Statement
+## 🎯 Problema
 
-Retailers lose revenue when product shelves are empty (out‑of‑stock). Manual shelf checks are costly and error‑prone. REGOVA automates detection, quantifies the impact, and helps staff prioritize restocking.
+Los retailers pierden ingresos cuando los estantes están vacíos (out‑of‑stock). Las revisiones manuales son costosas y propensas a errores. REGOVA automatiza la detección, cuantifica el impacto y ayuda al personal a priorizar la reposición.
 
-## 🚀 Solution Overview
+## 🚀 Solución
 
-- **Computer‑vision pipeline** – YOLOv8n + OpenCV processes shelf images captured by low‑cost cameras.
-- **Backend API** – FastAPI (Python 3.13) orchestrates model inference, stores results in PostgreSQL, and serves data to the UI.
-- **Frontend** – React 19 + TypeScript provides dashboards, alerts, and exportable reports.
-- **Security** – Argon2id password hashing, RBAC for role‑based access.
-- **Reporting** – PDF generation via ReportLab, automated test suites, and CI pipelines.
+- **Pipeline de visión** – YOLOv8n + OpenCV procesa imágenes de los estantes capturadas por cámaras de bajo costo.  
+- **API Backend** – FastAPI (Python 3.13) orquesta la inferencia, guarda los resultados en PostgreSQL y sirve datos a la UI.  
+- **Frontend** – React 19 + TypeScript muestra tableros, alertas y exportación de reportes.  
+- **Seguridad** – Hashing Argon2id, control de acceso basado en roles (RBAC).  
+- **Reportes** – Generación de PDFs con ReportLab, pruebas automatizadas y pipelines CI.
 
-### Architecture Diagram
+### Diagrama de arquitectura
 
-*(Add your architecture diagram here)*  
+*(Añade aquí tu diagrama de arquitectura)*  
 
-`![MER Diagram](docs/modelado/02_MER/MER_REGOVA_Completo.png)`  
+`![Diagrama MER](docs/modelado/02_MER/MER_REGOVA_Completo.png)`  
 
-`![ML Pipeline Diagram](docs/modelado/01_ML/ML_REGOVA.png)`
+`![Diagrama de flujo ML](docs/modelado/01_ML/ML_REGOVA.png)`
 
-## 🛠️ Technology Stack
+## 🛠️ Tecnologías usadas
 
-| Layer | Technology | Version | Badge |
-|-------|------------|---------|-------|
-| **Language** | Python | 3.13 | ![Python](https://img.shields.io/badge/python-3.13-blue?logo=python) |
+| Capa | Tecnologías | Versión | Badge |
+|------|-------------|---------|-------|
+| **Lenguaje** | Python | 3.13 | ![Python](https://img.shields.io/badge/python-3.13-blue?logo=python) |
 | | TypeScript / JavaScript | 5.5 / 19 | ![TypeScript](https://img.shields.io/badge/TypeScript-5.5.2-blue?logo=typescript) |
 | | SQL (PostgreSQL) | 18 | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18.0-336791?logo=postgresql) |
 | | Bash / PowerShell (scripts) | – | |
 | **Frameworks** | FastAPI | 0.115.0 | ![FastAPI](https://img.shields.io/badge/FastAPI-0.115.0-009688?logo=fastapi) |
 | | React | 19.0.0 | ![React](https://img.shields.io/badge/React-19.0.0-61DAFB?logo=react) |
-| **AI / CV** | YOLOv8n (PyTorch) | n | ![YOLOv8](https://img.shields.io/badge/YOLOv8-n-FF6F61) |
+| **IA / CV** | YOLOv8n (PyTorch) | n | ![YOLOv8](https://img.shields.io/badge/YOLOv8-n-FF6F61) |
 | | OpenCV | 4.10.0 | ![OpenCV](https://img.shields.io/badge/OpenCV-4.10.0-5C3EE8?logo=opencv) |
-| **Databases** | PostgreSQL | 18 | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18.0-336791?logo=postgresql) |
-| **Containerisation** | Docker | 24.0.6 | ![Docker](https://img.shields.io/badge/Docker-24.0.6-2496ED?logo=docker) |
-| **Security** | Argon2id | – | |
-| **Reporting** | ReportLab | – | |
+| **Base de datos** | PostgreSQL | 18 | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18.0-336791?logo=postgresql) |
+| **Contenedores** | Docker | 24.0.6 | ![Docker](https://img.shields.io/badge/Docker-24.0.6-2496ED?logo=docker) |
+| **Seguridad** | Argon2id | – | |
+| **Reportes** | ReportLab | – | |
 | **Testing** | pytest (Python) | – | |
 | | JUnit (Java) | – | |
-| **CI / Automation** | GitHub Actions | – | |
+| **CI / Automatización** | GitHub Actions | – | |
 
-## 📦 Installation
+## 📦 Instalación
 
 ```bash
-# Clone the repository
-git clone https://github.com/your‑username/REGOVA.git
+# Clonar el repositorio
+git clone https://github.com/tu-usuario/REGOVA.git
 cd REGOVA
 
 # Backend (Python)
 python -m venv venv
-.\venv\Scripts\activate   # Windows PowerShell
+.\venv\Scripts\activate   # PowerShell en Windows
 pip install -r requirements.txt
 
-# Set up PostgreSQL
-# (Create a database named regova and run the migration scripts in docs/db/)
+# Configurar PostgreSQL
+# (Crear una base de datos llamada regova y ejecutar los scripts de migración en docs/db/)
 
 # Frontend (Node.js)
-npm install               # npm >= 10, or use pnpm (install outside sandbox if needed)
-npm run build             # creates production assets in /dist
+npm install               # npm >= 10, o pnpm (instalar fuera del sandbox si es necesario)
+npm run build             # genera los assets en /dist
 
-# Optional Docker setup
+# Opcional: entorno con Docker
 docker compose up -d
 ```
 
-### Environment variables
+### Variables de entorno
 
-Create a `.env` file in the project root (example):
+Crea un archivo `.env` en la raíz del proyecto (ejemplo):
 
 ```
 POSTGRES_USER=regova_user
-POSTGRES_PASSWORD=strong_password
+POSTGRES_PASSWORD=contraseña_fuerte
 POSTGRES_DB=regova
 FASTAPI_HOST=0.0.0.0
 FASTAPI_PORT=8000
-SECRET_KEY=your_secret_key
+SECRET_KEY=tu_clave_secreta
 ```
 
-## ▶️ Usage
+## ▶️ Uso
 
 ```bash
-# Start the FastAPI backend
+# Iniciar el backend FastAPI
 uvicorn app.main:app --host 0.0.0.0 --port 8000
 
-# Serve the frontend (development)
+# Servir el frontend (desarrollo)
 npm start
 ```
 
-- Open `http://localhost:3000` to view the dashboard.
-- API docs are available at `http://localhost:8000/docs`.
-- Use the UI to upload shelf images, view detection results, and export PDF reports.
+- Accede a `http://localhost:3000` para ver el tablero.  
+- La documentación de la API está disponible en `http://localhost:8000/docs`.  
+- Usa la UI para cargar imágenes de góndolas, ver resultados de detección y exportar reportes PDF.
 
-## ✅ Testing
+## ✅ Pruebas
 
 ```bash
-# Backend tests
+# Pruebas del backend
 pytest tests/backend
 
-# Frontend tests
+# Pruebas del frontend
 npm run test
 ```
 
-Continuous integration runs the above on every push.
+Las acciones de CI ejecutan estas pruebas en cada push.
 
-## 🤝 Contributing
+## 🤝 Contribuir
 
-1. Fork the repository.
-2. Create a feature branch: `git checkout -b feature/awesome‑feature`.
-3. Follow the code style guidelines (`black`, `prettier`, `flake8`).
-4. Write tests for new functionality.
-5. Open a Pull Request with a clear description.
+1. Haz fork del repositorio.  
+2. Crea una rama de características: `git checkout -b feature/tu‑feature`.  
+3. Sigue las guías de estilo de código (`black`, `prettier`, `flake8`).  
+4. Escribe pruebas para la nueva funcionalidad.  
+5. Abre un Pull Request con una descripción clara.
 
-Please see `CONTRIBUTING.md` for detailed guidelines.
+Consulta `CONTRIBUTING.md` para más detalles.
 
-## 📄 License
+## 📄 Licencia
 
-This project is licensed under the **MIT License** – see the `LICENSE` file for details.
+Este proyecto está bajo la **Licencia MIT** – revisa el archivo `LICENSE` para más información.
 
-## 📧 Contact
-
-- **Project Lead:** [Your Name] – `your.email@example.com`
-- **Affiliation:** Duoc UC – Retail Innovation Lab
-- **Client:** Walmart Chile
-
----
-
-*Feel free to open issues or submit pull requests for any improvements or bug fixes!*
