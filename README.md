@@ -1,110 +1,98 @@
 # REGOVA — Regiones de Góndola para Valoración de Ausencias
 
-![Python](https://img.shields.io/badge/python-3.13-blue?logo=python)  ![FastAPI](https://img.shields.io/badge/FastAPI-0.115.0-009688?logo=fastapi)  ![React](https://img.shields.io/badge/React-19.0.0-61DAFB?logo=react)  ![TypeScript](https://img.shields.io/badge/TypeScript-5.5.2-blue?logo=typescript)  ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18.0-336791?logo=postgresql)  ![YOLOv8](https://img.shields.io/badge/YOLOv8-n-FF6F61) ![OpenCV](https://img.shields.io/badge/OpenCV-4.10.0-5C3EE8?logo=opencv)  ![Docker](https://img.shields.io/badge/Docker-24.0.6-2496ED?logo=docker)  ![License](https://img.shields.io/badge/License-MIT-green)
+![Python 3.13](https://img.shields.io/badge/Python-3.13-3776AB?logo=python)
+![FastAPI 0.162.0](https://img.shields.io/badge/FastAPI-0.162.0-009688?logo=fastapi)
+![React 19.3.1](https://img.shields.io/badge/React-19.3.1-61DAFB?logo=react)
+![TypeScript 6.0.3](https://img.shields.io/badge/TypeScript-6.0.3-3178C6?logo=typescript)
+![PostgreSQL 17 en Docker](https://img.shields.io/badge/PostgreSQL-17-336791?logo=postgresql)
+![Docker Compose](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker)
 
-## 📖 Descripción del proyecto
+## Descripción
 
-**REGOVA** es un sistema de IA de stack completo que detecta góndolas vacías en tiendas minoristas y brinda información accionable para reducir situaciones de stock‑out. Combina modelos de visión por computadora, un backend FastAPI y una interfaz React/TypeScript para ofrecer alertas y reportes en tiempo real.
+**REGOVA** analiza fotografías de góndolas para detectar espacios vacíos en tiendas minoristas. El personal puede consultar los resultados, revisar alertas y exportar reportes para priorizar la reposición.
 
-## 🎯 Problema
+El sistema combina un modelo YOLOv8n, procesamiento de imágenes con OpenCV, una API FastAPI y una interfaz en React y TypeScript. Los resultados se registran en PostgreSQL y el acceso a las funciones se controla mediante roles.
 
-Los retailers pierden ingresos cuando los estantes están vacíos (out‑of‑stock). Las revisiones manuales son costosas y propensas a errores. REGOVA automatiza la detección, cuantifica el impacto y ayuda al personal a priorizar la reposición.
+## Diagramas
 
-## 🚀 Solución
+### Modelo de datos
 
-- **Pipeline de visión** – YOLOv8n + OpenCV procesa imágenes de los estantes capturadas por cámaras de bajo costo.  
-- **API Backend** – FastAPI (Python 3.13) orquesta la inferencia, guarda los resultados en PostgreSQL y sirve datos a la UI.  
-- **Frontend** – React 19 + TypeScript muestra tableros, alertas y exportación de reportes.  
-- **Seguridad** – Hashing Argon2id, control de acceso basado en roles (RBAC).  
-- **Reportes** – Generación de PDFs con ReportLab, pruebas automatizadas y pipelines CI.
+![Diagrama entidad-relación de REGOVA](docs/modelado/02_MER/MER_REGOVA_Completo.png)
 
-### Diagrama de arquitectura
+### Flujo de análisis de imágenes
 
-*(Añade aquí tu diagrama de arquitectura)*  
+![Diagrama del flujo de aprendizaje automático](docs/modelado/01_ML/ML_REGOVA.png)
 
-`![Diagrama MER](docs/modelado/02_MER/MER_REGOVA_Completo.png)`  
+## Tecnologías y versiones
 
-`![Diagrama de flujo ML](docs/modelado/01_ML/ML_REGOVA.png)`
+| Componente | Versión o configuración |
+|---|---|
+| Python | 3.13 |
+| Node.js | 24 en la imagen de compilación |
+| FastAPI | 0.162.0 en el entorno de la aplicación |
+| React | 19.3.1 |
+| TypeScript | 6.0.3 |
+| PostgreSQL | 17 en Docker. El backend también documenta pruebas en PostgreSQL 18 |
+| Modelo de detección | YOLOv8n con Ultralytics 8.3.159 en el entorno de inferencia |
+| OpenCV | 4.12.0.88 en inferencia y `opencv-python-headless` 5.0.0.93 en la aplicación |
+| Autenticación y permisos | Argon2id y control de acceso basado en roles |
+| Reportes PDF | ReportLab 5.1.0 |
+| Pruebas | Vitest para el frontend y pytest para el backend |
+| Contenedores | Docker con Compose v2 según la guía del proyecto. Docker Engine sin versión fijada |
 
-## 🛠️ Tecnologías usadas
+Las versiones se pueden consultar en [`package-lock.json`](package-lock.json), [`backend/requirements-app.lock.txt`](backend/requirements-app.lock.txt), [`backend/requirements-inference.lock.txt`](backend/requirements-inference.lock.txt), [`Dockerfile`](Dockerfile) y [`compose.yaml`](compose.yaml).
 
-| Capa | Tecnologías | Versión | Badge |
-|------|-------------|---------|-------|
-| **Lenguaje** | Python | 3.13 | ![Python](https://img.shields.io/badge/python-3.13-blue?logo=python) |
-| | TypeScript / JavaScript | 5.5 / 19 | ![TypeScript](https://img.shields.io/badge/TypeScript-5.5.2-blue?logo=typescript) |
-| | SQL (PostgreSQL) | 18 | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18.0-336791?logo=postgresql) |
-| | Bash / PowerShell (scripts) | – | |
-| **Frameworks** | FastAPI | 0.115.0 | ![FastAPI](https://img.shields.io/badge/FastAPI-0.115.0-009688?logo=fastapi) |
-| | React | 19.0.0 | ![React](https://img.shields.io/badge/React-19.0.0-61DAFB?logo=react) |
-| **IA / CV** | YOLOv8n (PyTorch) | n | ![YOLOv8](https://img.shields.io/badge/YOLOv8-n-FF6F61) |
-| | OpenCV | 4.10.0 | ![OpenCV](https://img.shields.io/badge/OpenCV-4.10.0-5C3EE8?logo=opencv) |
-| **Base de datos** | PostgreSQL | 18 | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18.0-336791?logo=postgresql) |
-| **Contenedores** | Docker | 24.0.6 | ![Docker](https://img.shields.io/badge/Docker-24.0.6-2496ED?logo=docker) |
-| **Seguridad** | Argon2id | – | |
-| **Reportes** | ReportLab | – | |
-| **Testing** | pytest (Python) | – | |
-| | JUnit (Java) | – | |
-| **CI / Automatización** | GitHub Actions | – | |
+## Instalación con Docker
 
-## 📦 Instalación
+Se requiere Docker con Compose y un host Linux x86-64 o Docker Desktop en modo Linux. Si recibiste el proyecto como ZIP, extráelo y abre PowerShell en la carpeta que contiene `compose.yaml`.
 
-```bash
-# Clonar el repositorio
-git clone https://github.com/tu-usuario/REGOVA.git
-cd REGOVA
+1. Crea la configuración local.
 
-# Backend (Python)
-python -m venv venv
-.\venv\Scripts\activate   # PowerShell en Windows
-pip install -r requirements.txt
+   ```powershell
+   Copy-Item .env.docker.example .env.docker
+   ```
 
-# Configurar PostgreSQL
-# (Crear una base de datos llamada regova y ejecutar los scripts de migración en docs/db/)
+2. Edita `.env.docker` y define `POSTGRES_PASSWORD`, `REGOVA_DB_PASSWORD` y `REGOVA_ADMIN_PASSWORD`. La contraseña de administración debe tener al menos 10 caracteres. Configura `REGOVA_CHECKPOINT` con la ruta al archivo `best.pt` entrenado. Si descargaste el ZIP para GitHub, consigue los pesos por separado.
 
-# Frontend (Node.js)
-npm install               # npm >= 10, o pnpm (instalar fuera del sandbox si es necesario)
-npm run build             # genera los assets en /dist
+3. Construye la aplicación e inicia los servicios.
 
-# Opcional: entorno con Docker
-docker compose up -d
+   ```powershell
+   docker compose --env-file .env.docker build app
+   docker compose --env-file .env.docker up -d
+   docker compose --env-file .env.docker ps -a
+   ```
+
+4. Comprueba que la aplicación responde.
+
+   ```powershell
+   Invoke-RestMethod http://localhost:8011/api/ready
+   ```
+
+Consulta [`DOCKER.md`](DOCKER.md) para la configuración de correo, los volúmenes y los comandos de diagnóstico. Para la instalación local en Windows, sigue el [manual de instalación](Manual_de_instalacion_REGOVA.md).
+
+## Uso
+
+Abre [REGOVA](http://localhost:8011) e inicia sesión con el usuario `ADM-001` y la contraseña definida en `REGOVA_ADMIN_PASSWORD`. Desde la interfaz puedes cargar una fotografía de góndola, ejecutar un análisis y consultar los resultados.
+
+La documentación interactiva de la API está en [Swagger UI](http://localhost:8011/api/docs).
+
+## Desarrollo y pruebas
+
+Desde la raíz del proyecto, instala las dependencias y ejecuta las pruebas del frontend.
+
+```powershell
+npm ci
+npm test
 ```
 
-### Variables de entorno
+Usa `npm run dev` para iniciar Vite en modo desarrollo o `npm run build` para compilar el frontend.
 
-Crea un archivo `.env` en la raíz del proyecto (ejemplo):
+Para las pruebas del backend, activa el entorno de Python con las dependencias de prueba e inicia pytest desde `backend`.
 
-```
-POSTGRES_USER=regova_user
-POSTGRES_PASSWORD=contraseña_fuerte
-POSTGRES_DB=regova
-FASTAPI_HOST=0.0.0.0
-FASTAPI_PORT=8000
-SECRET_KEY=tu_clave_secreta
+```powershell
+Push-Location backend
+python -m pytest
+Pop-Location
 ```
 
-## ▶️ Uso
-
-```bash
-# Iniciar el backend FastAPI
-uvicorn app.main:app --host 0.0.0.0 --port 8000
-
-# Servir el frontend (desarrollo)
-npm start
-```
-
-- Accede a `http://localhost:3000` para ver el tablero.  
-- La documentación de la API está disponible en `http://localhost:8000/docs`.  
-- Usa la UI para cargar imágenes de góndolas, ver resultados de detección y exportar reportes PDF.
-
-## ✅ Pruebas
-
-```bash
-# Pruebas del backend
-pytest tests/backend
-
-# Pruebas del frontend
-npm run test
-```
-
-Las acciones de CI ejecutan estas pruebas en cada push.
-
+Las pruebas de integración con PostgreSQL requieren una base desechable cuyo nombre termine en `_TEST`, configurada mediante `REGOVA_TEST_DSN`. Consulta la [documentación del backend](backend/API_REGOVA.md) para preparar ese entorno.
